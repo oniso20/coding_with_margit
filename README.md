@@ -1,1 +1,1 @@
-# JavaScript lessons with Margit at the Business Colledge Helsinki
+# JavaScript Lessons with Margit Tennosaar at the Business Colledge Helsinki
