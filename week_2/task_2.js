@@ -8,13 +8,13 @@
 15 % 5; // 0
 5 % 15; // Some fraction
 "Java" + "Script"; //JavaScript
-"Java" - "Script"; // Some bit number?
+"Java" - "Script"; // Some bit number? NaN
 " " + " "; // "  "
 " " + 0; // " 0"
-true + true; // true
-true + false; // no idea
-false + true; // ??
-false - true; // ??
+true + true; // true -- 2 as true is 1
+true + false; // no idea -- 1
+false + true; // ?? -- 1
+false - true; // ?? -- -1
 3 - 4; // -1
 
 
@@ -23,10 +23,10 @@ false - true; // ??
 6 === 2; // false
 3 <= 1; // false
 1 != 1; // false
-"A" > "B"; //false
-"B" < "C"; //false
-"a" > "A"; //true
-"b" < "A"; // ?
+"A" > "B"; // false
+"B" < "C"; // True
+"a" > "A"; // true
+"b" < "A"; // false
 true === false; // false
 true != true; // false
 
