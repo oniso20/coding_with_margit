@@ -3,12 +3,12 @@
 
 
 //Evaluate the below:
-3 + "65"; //"365"
-7 - "3"; //NAN -- 4
+3 + "65"; //"365" => concat for +
+7 - "3"; //NAN -- 4 => treated the string as a number for -
 15 % 5; // 0
-5 % 15; // Some fraction
+5 % 15; // Some fraction -- 5 => since the 
 "Java" + "Script"; //JavaScript
-"Java" - "Script"; // Some bit number? NaN
+"Java" - "Script"; // Some bit number? -- NaN
 " " + " "; // "  "
 " " + 0; // " 0"
 true + true; // true -- 2 as true is 1
@@ -34,3 +34,5 @@ true != true; // false
 // Make the string: 
 // "Go To Helsinki Business College," they said. "It'll Will Be "Fun"," they said.
 // by using the + sign:
+
+"\"Go To Helsinki Business College, \"" + "they said. " + "\"It'll Will Be \"Fun\", \"" + "they said.";
