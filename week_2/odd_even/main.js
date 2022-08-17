@@ -1,5 +1,5 @@
 const oddOrEven = () => {
-    const number = prompt("Input a number");
+    const number = Number(prompt("Input a number"));
 
     if (number < 0) {
         return console.log("Enter a positive number");
