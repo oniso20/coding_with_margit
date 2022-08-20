@@ -15,7 +15,7 @@ const addAndMult = () => {
     } else if (number1 >= 0 || number2 >= 0 || number3 >= 0) {
         return console.log("The total is: ", total);
     } else {
-        return console.log("only nagatives");
+        return console.log("only negatives");
     }
 
 };
