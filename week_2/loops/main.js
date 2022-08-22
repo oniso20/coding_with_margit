@@ -1,4 +1,4 @@
-//Make a program that prints all positive numbers that are odd and smaller than 100 starting from 1. (1 3 5 7 9 11…)
+// 1. Make a program that prints all positive numbers that are odd and smaller than 100 starting from 1. (1 3 5 7 9 11…)
 
 // for (let number = 1; number < 100; number++) {
 //     if (number % 2 != 0) {
@@ -6,7 +6,7 @@
 //     }
 // }
 
-// Make a program that prints all positive numbers that are smaller than 100 and even, in this order: 2 98 4 96 6 94 … Print result in one line.
+// 2. Make a program that prints all positive numbers that are smaller than 100 and even, in this order: 2 98 4 96 6 94 … Print result in one line.
 
 // let result = "";
 
@@ -16,7 +16,7 @@
 // console.log(result);
 
 
-// Make a program that asks repeatedly from the user the distance (km) and time (h) and calculates average speed. The program ends when user gives 0 for the distance. (After getting 0, the program does not ask anything from the user.)
+// 3. Make a program that asks repeatedly from the user the distance (km) and time (h) and calculates average speed. The program ends when user gives 0 for the distance. (After getting 0, the program does not ask anything from the user.)
 
 // let distance, time 
 
@@ -31,7 +31,7 @@
 
 // while (distance != 0)
 
-// Make a program that asks 20 numbers from user. After that the program prints out how many of those numbers where even.
+// 4. Make a program that asks 20 numbers from user. After that the program prints out how many of those numbers where even.
 
 // let promptN, odd = 0, even = 0, num = 1
 
@@ -138,7 +138,7 @@ maxNum = Math.max(...newArr)
 minNum = Math.min(...newArr)
 sumOfArr = newArr.reduce((cum, curr) => cum + curr, 0)
 avgNumber = sumOfArr/newArr.length
-console.log(`The inputed numbers are: ${ newArr }
+console.log(` The inputed numbers are: ${ newArr }
 The Max number is: ${ maxNum }
 The Min number is: ${ minNum }
 The Sum of the numbers is: ${ sumOfArr }
