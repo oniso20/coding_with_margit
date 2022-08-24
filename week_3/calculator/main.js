@@ -10,14 +10,18 @@ function gasCalc() {
 
     let amtOfGasoline = amtOfMoney / gasPrice; //in litres
 
-    let result1 = `You could get ${amtOfGasoline.toFixed(2)} litres, ...Ups, you have to stay here.`
+    let result1 = `You could get ${amtOfGasoline.toFixed(2)} litres, ...Ups 😔, you have to stay here.`
 
-    let result2 = `You could get ${amtOfGasoline.toFixed(2)} litres, good, you can escape now `
+    let result2 = `You could get ${amtOfGasoline.toFixed(2)} litres, ...good 👍 you can escape now `
+
+    let result3 = `You need to add the price per litre and the amount you plan to spend`
 
     if (amtOfGasoline < 10) {
         document.querySelector('#result').innerHTML = result1 
-    } else {
+    } else if (amtOfGasoline >= 10) {
         document.querySelector('#result').innerHTML = result2
+    } else {
+        document.querySelector('#result').innerHTML = result3
     }
 
 };
