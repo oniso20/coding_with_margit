@@ -1,27 +1,67 @@
 // Asks the price of the gasoline and the amount of money from the user. Calculate how much gasoline the user gets with the money
 
+//My Solution
+// document.querySelector("#button").addEventListener("click", gasCalc);
 
-document.querySelector("#button").addEventListener("click", gasCalc);
+// function gasCalc() {
 
-function gasCalc() {
+//     const gasPrice = +document.querySelector("#price").value;
+//     const amtOfMoney = +document.querySelector("#money").value
 
-    let gasPrice = +document.querySelector("#price").value;
-    let amtOfMoney = +document.querySelector("#money").value
+//     const amtOfGasoline = amtOfMoney / gasPrice; //in litres
 
-    let amtOfGasoline = amtOfMoney / gasPrice; //in litres
+//     const result1 = `You could get ${amtOfGasoline.toFixed(2)} litres, ...Ups 😔, you have to stay here.`
 
-    let result1 = `You could get ${amtOfGasoline.toFixed(2)} litres, ...Ups 😔, you have to stay here.`
+//     const result2 = `You could get ${amtOfGasoline.toFixed(2)} litres, ...good 👍 you can escape now `
 
-    let result2 = `You could get ${amtOfGasoline.toFixed(2)} litres, ...good 👍 you can escape now `
+//     const result3 = `You need to add the price per litre and the amount you plan to spend`
 
-    let result3 = `You need to add the price per litre and the amount you plan to spend`
+//     if (amtOfGasoline < 10) {
+//         document.querySelector('#result').innerHTML = result1 
+//     } else if (amtOfGasoline >= 10) {
+//         document.querySelector('#result').innerHTML = result2
+//     } else {
+//         document.querySelector('#result').innerHTML = result3
+//     }
 
-    if (amtOfGasoline < 10) {
-        document.querySelector('#result').innerHTML = result1 
-    } else if (amtOfGasoline >= 10) {
-        document.querySelector('#result').innerHTML = result2
+// };
+
+// Margit's Solution
+// Main difference - onclick="calculate()" is added to the button in html, also Math.floor
+
+const calculateGas = () => {
+    const price = +document.getElementById('price').value;
+    const money = +document.querySelector('#money').value;
+    const answer = document.querySelector('#result');
+
+    const amount = Math.floor(money / price);
+
+    let text;
+
+    if (amount >= 10) {
+        text = `You could get ${amount} litres, ...good 👍 you can escape now `;
+    } else if (amount < 10) {
+        text = `You could get ${amount} litres, ...Ups 😔, you have to stay here.`;
     } else {
-        document.querySelector('#result').innerHTML = result3
+        text = `You need to add the price per litre and the amount you plan to spend`;
     }
 
+    answer.textContent = text;
 };
+
+// Temperature Converter
+
+//My Solution
+
+function temperatureConverter(id, val) {
+    val = parseFloat(val);
+
+    const outputFahrenheit = document.querySelector('#outputFahrenheit');
+    const outputCelcius = document.querySelector('#outputCelcius');
+    const outputKelvin = document.querySelector('#outputKelvin');
+
+    if (id == 'outputCelcius') {
+
+    }
+}
+

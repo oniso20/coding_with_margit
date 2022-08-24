@@ -9,19 +9,47 @@
   </head>
   <body>
     <h1>Onis Calculators</h1>
+    <!-- Gas Calculator -->
     <section class="gas-calculator">
       <h2>Gasoline Price Calculator</h2>
       <p>
         To use this calculator, input the current price of gasoline in the
-        station per litre and the amount of money you intend to spend on gasoline.
+        station per litre and the amount of money you intend to spend on
+        gasoline.
       </p>
 
       <div class="inputs">
-        <p><span>Price: <input id="price" type="number" /></span></p>
-        <p><span>Money: <input id="money" type="number" /></span></p>
+        <label for="price">Price: </label>
+        <input id="price" type="number" />
       </div>
-      <button id="button">Calculate</button>
+      <div class="inputs"></div>
+        <label for="money">Money: </label>
+        <input id="money" type="number" />
+      </div>
+      <div>
+        <button onclick="calculateGas()" id="button">Calculate</button>
+      </div>
       <p>Result: <span id="result"></span></p>
+    </section>
+    <!-- Temperature Calculator -->
+    <section class="temperature-calculator">
+      <h2>Temperature Calculator</h2>
+      <p>
+        How is works...
+      </p>
+
+      <div class="inputs">
+        <label for="celsius">Celsius: </label>
+        <input type="number" id="outputCelcius" placeholder="Celsius" oninput="temperatureConverter(this.id, this.value)" onchange="temperatureConverter(this.id, this.value)"/>
+      </div>
+      <div class="inputs"></div>
+        <label for="fahrenheit">Fahrenheit: </label>
+        <input id="outputFahrenheit" type="number" placeholder="Fahrenheit" oninput="temperatureConverter(this.id, this.value)" onchange="temperatureConverter(this.id, this.value)" />
+      </div>
+      <div class="inputs"></div>
+        <label for="kelvin">Kelvin: </label>
+        <input id="outputKelvin" type="number" placeholder="Kelvin" oninput="temperatureConverter(this.id, this.value)" onchange="temperatureConverter(this.id, this.value)" />
+      </div>
     </section>
 
     <script src="main.js"></script>
