@@ -51,8 +51,6 @@ const calculateGas = () => {
 
 // Temperature Converter
 
-//My Solution
-
 function temperatureConverter(id, val) {
     val = parseFloat(val);
 
@@ -60,8 +58,17 @@ function temperatureConverter(id, val) {
     const outputCelcius = document.querySelector('#outputCelcius');
     const outputKelvin = document.querySelector('#outputKelvin');
 
+    if (id == 'outputFahrenheit') {
+        outputCelcius.value = ((val - 32) / 1.8).toFixed(2);
+        outputKelvin.value = ((val - 32) / 1.8 + 273.15).toFixed(2);
+    }
     if (id == 'outputCelcius') {
-
+        outputFahrenheit.value = (val * 1.8 + 32).toFixed(2);
+        outputKelvin.value = (val + 273.15).toFixed(2);
+    }
+    if (id == 'outputKelvin') {
+        outputFahrenheit.value = ((val - 273.15) * 1.8 + 32).toFixed(2);
+        outputCelcius.value = (val - 273.15).toFixed(2);
     }
 }
 

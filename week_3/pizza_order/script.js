@@ -1,45 +1,72 @@
-const pizzaSize = +prompt('Select a pizza size');
-const numOfToppings = +prompt('Selects number of toppings');
-const deliveryMethod = prompt('Please select a delivery method(Home, Eat in, Pickup):').toLowerCase();
-let pizzaPrice, toppingsPrice, deliveryPrice;
+const pizzaOrderPrize = () => {
 
-// Pizza Size and Price
+    let pizzaPrice, toppingsPrice, deliveryPrice;
 
-if (pizzaSize === 2) {
-    pizzaPrice = 7.50;
-} else if (pizzaSize === 4) {
-    pizzaPrice = 10.50;
-} else if (pizzaSize === 6) {
-    pizzaPrice = 12.50;
-} else if (pizzaSize === 8) {
-    pizzaPrice = 15.50;
-} else {
-    document.write('Please select a Pizza Size');
+    // Pizza Size and Price
+
+    const pizzaSizeFor2 = document.getElementById('pizzaSizeFor2');
+    const pizzaSizeFor4 = document.getElementById('pizzaSizeFor4');
+    const pizzaSizeFor6 = document.getElementById('pizzaSizeFor6');
+    const pizzaSizeFor8 = document.getElementById('pizzaSizeFor8');
+
+
+    if (pizzaSizeFor2.checked === true) {
+        pizzaPrice = 7.50;
+    } else if (pizzaSizeFor4.checked === true) {
+        pizzaPrice = 10.50;
+    } else if (pizzaSizeFor6.checked === true) {
+        pizzaPrice = 12.50;
+    } else if (pizzaSizeFor8.checked === true) {
+        pizzaPrice = 15.50;
+    }
+
+    console.log(pizzaPrice);
+
+    // Pizza toppings
+
+    let totalToppings = 0;
+    const pizzaToppings = document.orderForm.pizzaToppings;
+
+    for (choice = 0; choice < pizzaToppings.length; choice++) {
+        if (pizzaToppings[choice].checked) {
+            totalToppings = totalToppings + parseInt(pizzaToppings[choice].value);
+        }
+    }
+
+    console.log(totalToppings);
+
+    if (totalToppings <= 4) {
+        toppingsPrice = 0;
+    } else if (totalToppings > 4) {
+        toppingsPrice = (totalToppings - 4) * 0.5;
+    }
+
+    console.log(toppingsPrice);
+
+    // Delivery Method
+
+    const deliveryMethod = document.getElementById('delivery_method');
+
+    if (deliveryMethod.value === 'home') {
+        deliveryPrice = 5;
+    } else if (deliveryMethod.value === 'eat-in' || deliveryMethod.value === 'pickup') {
+        deliveryPrice = 0;
+    }
+    console.log(deliveryMethod, deliveryPrice);
+
+    const totalPizzaCost = pizzaPrice + toppingsPrice + deliveryPrice;
+
+    const result = document.querySelector('#result');
+
+    console.log(totalPizzaCost);
+
+    text = `${pizzaPrice}, ${totalToppings}, ${deliveryMethod}, ${totalPizzaCost}`;
+
+    result.textContent = text;
+
+};
+
+function submitForm(event) {
+    event.preventDefault();
+    window.history.back();
 }
-
-// Pizza toppings
-
-if (numOfToppings <= 4) {
-    toppingsPrice = 0;
-} else if (numOfToppings > 4) {
-    toppingsPrice = (numOfToppings - 4) * 0.5;
-} else {
-    document.write('Please select toppings');
-}
-
-// Delivery Method
-
-if (deliveryMethod === 'home') {
-    deliveryPrice = 5;
-} else if (deliveryMethod === 'eat in' || deliveryMethod === 'pickup') {
-    deliveryPrice = 0;
-} else {
-    document.write('Please select a delivery method');
-}
-
-const totalPizzaCost = pizzaPrice + toppingsPrice + deliveryPrice;
-
-document.write(pizzaSize, numOfToppings, deliveryMethod, totalPizzaCost);
-
-
-
