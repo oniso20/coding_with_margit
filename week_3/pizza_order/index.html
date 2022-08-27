@@ -10,7 +10,7 @@
   <body>
     <header></header>
     <section>
-      <div name="orderForm">
+      <form name="orderForm" id="formSubmit">
         <!-- Pizza Size - Radio Section -->
         <div class="radio-buttons">
           <p>Select Pizza Size</p>
@@ -73,7 +73,7 @@
           <input
             type="checkbox"
             name="pizzaToppings"
-            value="topping"
+            value="1"
             id="pizza-topping"
           />
           <label for="pizza-topping">Sausage</label> <br />
@@ -149,7 +149,7 @@
         </div>
         <button onclick="pizzaOrderPrize()" id="button">Submit</button>
         <p>Status:<span id="result"></span></p>
-      </div>
+      </form>
     </section>
     <script src="script.js"></script>
   </body>

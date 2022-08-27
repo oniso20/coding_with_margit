@@ -20,39 +20,40 @@ const pizzaOrderPrize = () => {
         pizzaPrice = 15.50;
     }
 
-    console.log(pizzaPrice);
+    console.log("The pizza price is: ", pizzaPrice);
 
     // Pizza toppings
 
     let totalToppings = 0;
-    const pizzaToppings = document.orderForm.pizzaToppings;
+    let pizzaToppings = document.getElementsByName("pizzaToppings");
 
     for (choice = 0; choice < pizzaToppings.length; choice++) {
         if (pizzaToppings[choice].checked) {
-            totalToppings = totalToppings + parseInt(pizzaToppings[choice].value);
+            console.log(choice);
+            totalToppings = totalToppings + +(pizzaToppings[choice].value);
         }
     }
 
-    console.log(totalToppings);
+    console.log("Total topping(s) selected is: ", totalToppings);
 
     if (totalToppings <= 4) {
         toppingsPrice = 0;
     } else if (totalToppings > 4) {
-        toppingsPrice = (totalToppings - 4) * 0.5;
+        toppingsPrice = ((totalToppings - 4) * 0.5);
     }
 
-    console.log(toppingsPrice);
+    console.log("Toppings cost is: ", toppingsPrice);
 
     // Delivery Method
 
-    const deliveryMethod = document.getElementById('delivery_method');
+    const deliveryMethod = document.getElementById('delivery_method').value;
 
-    if (deliveryMethod.value === 'home') {
+    if (deliveryMethod === 'home') {
         deliveryPrice = 5;
-    } else if (deliveryMethod.value === 'eat-in' || deliveryMethod.value === 'pickup') {
+    } else if (deliveryMethod === 'eat-in' || deliveryMethod === 'pickup') {
         deliveryPrice = 0;
     }
-    console.log(deliveryMethod, deliveryPrice);
+    console.log("The delivery price is: ", deliveryPrice, "and delivery method is: ", deliveryMethod);
 
     const totalPizzaCost = pizzaPrice + toppingsPrice + deliveryPrice;
 
@@ -60,13 +61,18 @@ const pizzaOrderPrize = () => {
 
     console.log(totalPizzaCost);
 
-    text = `${pizzaPrice}, ${totalToppings}, ${deliveryMethod}, ${totalPizzaCost}`;
+    text = ` The pizza cost is: €${pizzaPrice}, 
+    
+    Total topping(s) selected is: ${totalToppings}, Toppings cost is: €${deliveryPrice},
+    
+    Your total price is: €${totalPizzaCost}`;
 
     result.textContent = text;
 
 };
 
-function submitForm(event) {
-    event.preventDefault();
-    window.history.back();
-}
+document.getElementById('formSubmit').addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    alert('Form is submitted');
+});
