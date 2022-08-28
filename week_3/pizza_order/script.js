@@ -31,14 +31,16 @@ const pizzaOrderPrize = () => {
     // Pizza toppings
 
     let totalToppings = 0;
-    let pizzaToppings = document.getElementsByName("pizzaToppings");
+    let selectedToppings = [];
+    let pizzaToppings = document.getElementsByClassName('checkboxes');
 
     for (choice = 0; choice < pizzaToppings.length; choice++) {
         if (pizzaToppings[choice].checked) {
-            console.log(choice);
+            selectedToppings.push(pizzaToppings[choice].name);
             totalToppings = totalToppings + +(pizzaToppings[choice].value);
         }
     }
+    selectedToppings = selectedToppings.join(', ');
 
     console.log("Total topping(s) selected is: ", totalToppings);
 
@@ -71,7 +73,7 @@ const pizzaOrderPrize = () => {
     
     The pizza cost is: €${pizzaPrice}, for ${pizzaSize}.
     
-    Total topping(s) selected is: ${totalToppings}, and your toppings cost: €${toppingsPrice}.
+    Total topping(s) selected is: ${totalToppings} - ${selectedToppings}, and your toppings cost: €${toppingsPrice}.
 
     Delivery method is ${deliveryMethod}, and delivery cost is €${deliveryPrice}.
     
