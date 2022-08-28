@@ -5,10 +5,6 @@
     box-sizing: border-box;
 }
 
-/******************************************
-/* LAYOUT
-/*******************************************/
-
 body {
     background-color: lightgreen;
     font-family: 'Roboto', sans-serif;
@@ -38,7 +34,6 @@ form {
 }
 
 h3 {
-    margin: 0;
     opacity: 0.5;
     letter-spacing: 2px;
 }
@@ -53,6 +48,11 @@ button {
     padding: 14px 40px;
     font-size: 16px;
     cursor: pointer;
+}
+
+select {
+    font-family: inherit;
+    width: 10rem;
 }
 
 .btn.active {
