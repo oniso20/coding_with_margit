@@ -1,6 +1,8 @@
 const pizzaOrderPrize = () => {
 
-    let pizzaPrice, toppingsPrice, deliveryPrice;
+    let pizzaPrice, toppingsPrice, deliveryPrice, pizzaSize;
+
+    const custName = document.getElementById('name').value;
 
     // Pizza Size and Price
 
@@ -12,12 +14,16 @@ const pizzaOrderPrize = () => {
 
     if (pizzaSizeFor2.checked === true) {
         pizzaPrice = 7.50;
+        pizzaSize = 'Small size pizza';
     } else if (pizzaSizeFor4.checked === true) {
         pizzaPrice = 10.50;
+        pizzaSize = 'Medium size pizza';
     } else if (pizzaSizeFor6.checked === true) {
         pizzaPrice = 12.50;
+        pizzaSize = 'Large size pizza';
     } else if (pizzaSizeFor8.checked === true) {
         pizzaPrice = 15.50;
+        pizzaSize = 'Extra-large size pizza';
     }
 
     console.log("The pizza price is: ", pizzaPrice);
@@ -61,13 +67,17 @@ const pizzaOrderPrize = () => {
 
     console.log(totalPizzaCost);
 
-    text = ` The pizza cost is: €${pizzaPrice}, 
+    text = ` Hello ${custName}!
     
-    Total topping(s) selected is: ${totalToppings}, Toppings cost is: €${deliveryPrice},
+    The pizza cost is: €${pizzaPrice}, for ${pizzaSize}.
+    
+    Total topping(s) selected is: ${totalToppings}, and your toppings cost: €${toppingsPrice}.
+
+    Delivery method is ${deliveryMethod}, and delivery cost is €${deliveryPrice}.
     
     Your total price is: €${totalPizzaCost}`;
 
-    result.textContent = text;
+    result.innerHTML = text;
 
 };
 
