@@ -38,11 +38,6 @@ const takeInquiry = (e) => {
     price += sum;
 
     result.innerHTML = `Hello ${customerName}, your insurance will cost: ${price.toFixed(1)} €.`;
-    console.log(customerName);
-    console.log(customerAge);
-    console.log(healthResult);
-    console.log(habitsChoices);
-    console.log(price);
 
     form.reset();
 };
