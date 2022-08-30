@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'PT Sans', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 20px;
+}
+
+label,
+input,
+button {
+    font-family: inherit;
+    margin: 2rem 0 0;
+}
+
+#name {
+    margin: 0 2rem;
+    width: 10rem;
+    height: 2rem;
+    padding: 1rem;
+}
+
+#age {
+    margin: 2rem 4.7rem 0;
+    width: 10rem;
+    height: 2rem;
+    padding: 1rem;
+}
+
+h2 {
+    margin: 0 0 1rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin: 2rem 0 0;
+}
+
+p {
+    text-align: center;
+}
+
+.main-session {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 50px 20px;
+    text-align: left;
+    max-width: 100%;
+    width: 800px;
+}
+
+form {
+    margin-left: 15rem;
+}
+
+button {
+    background-color: green;
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 2rem 5rem;
+    padding: 14px 30px;
+    cursor: pointer;
+}

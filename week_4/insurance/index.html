@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Insurance Calculator</title>
+  </head>
+  <body>
+    <header>
+      <h2>Insurance Calculator</h2>
+      <nav></nav>
+    </header>
+    <section class="main-session" id="main">
+      <form id="form">
+        <label for="name">Full Name: </label>
+        <input type="text" id="name" placeholder="John Doe" /> <br />
+        <label for="age">Age</label>
+        <input type="number" id="age" placeholder="18" /> <br />
+        <h3>Current Health</h3>
+        <input type="checkbox" name="health" id="hypertension" value="0.01" />
+        <label for="hypertension">Hypertension</label>
+        <input type="checkbox" name="health" id="bloodSugar" value="0.01" />
+        <label for="bloodSugar">Blood Sugar</label>
+        <input type="checkbox" name="health" id="overweight" value="0.01" />
+        <label for="overweight">Overweight</label>
+        <h3>Current Habits</h3>
+        <input type="checkbox" name="habits" id="smoking" value="25" />
+        <label for="smoking">Smoking</label>
+        <input type="checkbox" name="habits" id="alcohol" value="25" />
+        <label for="alcohol">Alcohol</label>
+        <input type="checkbox" name="habits" id="exercise" value="-25" />
+        <label for="exercise">Daily exercise</label>
+        <input type="checkbox" name="habits" id="drugs" value="25" />
+        <label for="drugs">Drugs</label> <br />
+
+        <button id="submit">Submit inquiry</button>
+      </form>
+      <p>Cost of Insurance: <span id="result"></span></p>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
