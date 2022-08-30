@@ -1,52 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400&display=swap');
 
 /* Box Model Hack */
 * {
     box-sizing: border-box;
 }
 
-body {
-    background-color: lightgreen;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0;
-    padding: 20px
+.grid-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.display {
+    background: url(https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80) no-repeat center/cover;
 }
 
 .container {
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    padding: 50px 20px;
-    text-align: center;
-    max-width: 100%;
-    width: 800px;
+    font-size: small;
+    padding: 0 10px;
+    margin: 0;
+    text-align: left;
+    font-family: 'Economica', Verdana, Geneva, Tahoma, sans-serif;
 }
 
 form {
     text-align: left;
-    margin: 0 5vw;
+    font-family: 'Lato', Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h3 {
-    opacity: 0.5;
+.container h3 {
+    /* opacity: 0.5; */
+    font-size: large;
+    color: green;
+    letter-spacing: 2px;
+}
+
+.container>p {
     letter-spacing: 2px;
 }
 
 button {
-    background-color: blueviolet;
+    background-color: green;
     color: #fff;
     border: 0;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
-    padding: 14px 40px;
-    font-size: 16px;
+    margin: 2rem 5rem 0 5rem;
+    padding: 14px 30px;
     cursor: pointer;
 }
 

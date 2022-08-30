@@ -9,166 +9,179 @@
   </head>
   <body>
     <header></header>
-    <section class="container">
-      <h3>Pizza Order Page</h3>
-      <form name="orderForm" id="formSubmit">
-        <label for="name">Please enter your name: </label>
-        <input type="text" id="name" />
+    <div class="grid-wrap">
+      <section class="display">
+        <!-- <img
+          src="https://images.unsplash.com/photo-1593504049359-74330189a345?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1527&q=80"
+          alt=""
+        /> -->
+      </section>
+      <section class="container">
+        <h3>Pizza Order Page</h3>
+        <p>
+          Pizza like straight out of your nap, because you decide the toppings.
+          Try, mix, go crazy and find the most delicious taste world just for
+          you.
+        </p>
+        <form name="orderForm" id="formSubmit">
+          <label for="name">Please enter your name: </label>
+          <input type="text" id="name" />
 
-        <!-- Pizza Size - Radio Section -->
-        <div class="radio-buttons">
-          <p>Select Pizza Size</p>
-          <input
-            type="radio"
-            name="pizzaSize"
-            value="size for two"
-            id="pizzaSizeFor2"
-          />
-          <label for="pizza-size">Pizza for two (€7.5)</label> <br />
-          <input
-            type="radio"
-            name="pizzaSize"
-            value="size for four"
-            id="pizzaSizeFor4"
-          />
-          <label for="pizza-size">Pizza for four (€10.5)</label> <br />
-          <input
-            type="radio"
-            name="pizzaSize"
-            value="size for six"
-            id="pizzaSizeFor6"
-          />
-          <label for="pizza-size">Pizza for six (€12.5)</label> <br />
-          <input
-            type="radio"
-            name="pizzaSize"
-            value="size for eight"
-            id="pizzaSizeFor8"
-          />
-          <label for="pizza-size">Pizza for eight (€15.5)</label> <br />
-        </div>
+          <!-- Pizza Size - Radio Section -->
+          <div class="radio-buttons">
+            <p>Choose Size</p>
+            <input
+              type="radio"
+              name="pizzaSize"
+              value="size for two"
+              id="pizzaSizeFor2"
+            />
+            <label for="pizza-size">Pizza for two (€7.5)</label> <br />
+            <input
+              type="radio"
+              name="pizzaSize"
+              value="size for four"
+              id="pizzaSizeFor4"
+            />
+            <label for="pizza-size">Pizza for four (€10.5)</label> <br />
+            <input
+              type="radio"
+              name="pizzaSize"
+              value="size for six"
+              id="pizzaSizeFor6"
+            />
+            <label for="pizza-size">Pizza for six (€12.5)</label> <br />
+            <input
+              type="radio"
+              name="pizzaSize"
+              value="size for eight"
+              id="pizzaSizeFor8"
+            />
+            <label for="pizza-size">Pizza for eight (€15.5)</label> <br />
+          </div>
 
-        <!-- Pizza Toppings - Checkbox Section -->
-        <div class="checkbox">
-          <p>
-            Select your favorite pizza toppings below: <br />The first four are
-            free and any extra cost 0.5€ each.
-          </p>
-          <input
-            type="checkbox"
-            class="checkboxes"
-            name="Pepperoni"
-            value="1"
-            id="pizzatopping"
-          />
-          <label for="pizza-topping">Pepperoni</label> <br />
-          <input
-            type="checkbox"
-            class="checkboxes"
-            name="Mushroom"
-            value="1"
-            id="pizzatopping"
-          />
-          <label for="pizza-topping">Mushroom</label> <br />
-          <input
-            type="checkbox"
-            class="checkboxes"
-            name="Extra Cheese"
-            value="1"
-            id="pizzatopping"
-          />
-          <label for="pizza-topping">Extra Cheese</label> <br />
-          <input
-            type="checkbox"
-            class="checkboxes"
-            name="Sausage"
-            value="1"
-            id="pizzatopping"
-          />
-          <label for="pizza-topping">Sausage</label> <br />
-          <input
-            type="checkbox"
-            class="checkboxes"
-            name="Onion"
-            value="1"
-            id="pizzatopping"
-          />
-          <label for="pizza-topping">Onion</label> <br />
-          <input
-            type="checkbox"
-            class="checkboxes"
-            name="Black olives"
-            value="1"
-            id="pizzatopping"
-          />
-          <label for="pizza-topping">Black olives</label> <br />
-          <input
-            type="checkbox"
-            class="checkboxes"
-            name="Green pepper"
-            value="1"
-            id="pizzatopping"
-          />
-          <label for="pizza-topping">Green pepper</label> <br />
-          <input
-            type="checkbox"
-            class="checkboxes"
-            name="Fresh garlic"
-            value="1"
-            id="pizzatopping"
-          />
-          <label for="pizza-topping">Fresh garlic</label> <br />
-          <input
-            type="checkbox"
-            class="checkboxes"
-            name="Tomato"
-            value="1"
-            id="pizzatopping"
-          />
-          <label for="pizza-topping">Tomato</label> <br />
-          <input
-            type="checkbox"
-            class="checkboxes"
-            name="Chicken"
-            value="1"
-            id="pizzatopping"
-          />
-          <label for="pizza-topping">Chicken</label> <br />
-          <input
-            type="checkbox"
-            class="checkboxes"
-            name="Bacon"
-            value="1"
-            id="pizzatopping"
-          />
-          <label for="pizza-topping">Bacon</label> <br />
-          <input
-            type="checkbox"
-            class="checkboxes"
-            name="Peppers"
-            value="1"
-            id="pizzatopping"
-          />
-          <label for="pizza-topping">Peppers</label> <br />
-        </div>
+          <!-- Pizza Toppings - Checkbox Section -->
+          <div class="checkbox">
+            <p>
+              Select your favorite pizza toppings below: <br />The first four
+              are free and any extra cost 0.5€ each.
+            </p>
+            <input
+              type="checkbox"
+              class="checkboxes"
+              name="Pepperoni"
+              value="1"
+              id="pizzatopping"
+            />
+            <label for="pizza-topping">Pepperoni</label> <br />
+            <input
+              type="checkbox"
+              class="checkboxes"
+              name="Mushroom"
+              value="1"
+              id="pizzatopping"
+            />
+            <label for="pizza-topping">Mushroom</label> <br />
+            <input
+              type="checkbox"
+              class="checkboxes"
+              name="Extra Cheese"
+              value="1"
+              id="pizzatopping"
+            />
+            <label for="pizza-topping">Extra Cheese</label> <br />
+            <input
+              type="checkbox"
+              class="checkboxes"
+              name="Sausage"
+              value="1"
+              id="pizzatopping"
+            />
+            <label for="pizza-topping">Sausage</label> <br />
+            <input
+              type="checkbox"
+              class="checkboxes"
+              name="Onion"
+              value="1"
+              id="pizzatopping"
+            />
+            <label for="pizza-topping">Onion</label> <br />
+            <input
+              type="checkbox"
+              class="checkboxes"
+              name="Black olives"
+              value="1"
+              id="pizzatopping"
+            />
+            <label for="pizza-topping">Black olives</label> <br />
+            <input
+              type="checkbox"
+              class="checkboxes"
+              name="Green pepper"
+              value="1"
+              id="pizzatopping"
+            />
+            <label for="pizza-topping">Green pepper</label> <br />
+            <input
+              type="checkbox"
+              class="checkboxes"
+              name="Fresh garlic"
+              value="1"
+              id="pizzatopping"
+            />
+            <label for="pizza-topping">Fresh garlic</label> <br />
+            <input
+              type="checkbox"
+              class="checkboxes"
+              name="Tomato"
+              value="1"
+              id="pizzatopping"
+            />
+            <label for="pizza-topping">Tomato</label> <br />
+            <input
+              type="checkbox"
+              class="checkboxes"
+              name="Chicken"
+              value="1"
+              id="pizzatopping"
+            />
+            <label for="pizza-topping">Chicken</label> <br />
+            <input
+              type="checkbox"
+              class="checkboxes"
+              name="Bacon"
+              value="1"
+              id="pizzatopping"
+            />
+            <label for="pizza-topping">Bacon</label> <br />
+            <input
+              type="checkbox"
+              class="checkboxes"
+              name="Peppers"
+              value="1"
+              id="pizzatopping"
+            />
+            <label for="pizza-topping">Peppers</label> <br />
+          </div>
 
-        <!-- Delivery Section - Select Section -->
-        <div class="select">
-          <p>
-            Select a delivery method; home delivery costs €5, while other
-            methods are free.
-          </p>
-          <label for="delivery_method">Choose a delivery method</label>
-          <select name="deliveryMethods" id="delivery_method">
-            <option value="home">Home delivery</option>
-            <option value="eat-in">Eat in</option>
-            <option value="pickup">Pickup</option>
-          </select>
-        </div>
-        <button onclick="pizzaOrderPrize()" id="button">Submit Order</button>
-        <p>Status:<span id="result"></span></p>
-      </form>
-    </section>
+          <!-- Delivery Section - Select Section -->
+          <div class="select">
+            <p>
+              Select a delivery method; home delivery costs €5, while other
+              methods are free.
+            </p>
+            <label for="delivery_method">Choose a delivery method</label>
+            <select name="deliveryMethods" id="delivery_method">
+              <option value="home">Home delivery</option>
+              <option value="eat-in">Eat in</option>
+              <option value="pickup">Pickup</option>
+            </select>
+          </div>
+          <button onclick="pizzaOrderPrize()" id="button">Submit Order</button>
+          <p>Status:<span id="result"></span></p>
+        </form>
+      </section>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
