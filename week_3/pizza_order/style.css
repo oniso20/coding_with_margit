@@ -65,3 +65,7 @@ select {
 .btn.focus {
     outline: 0;
 }
+
+span {
+    color: orange;
+}
