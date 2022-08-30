@@ -86,5 +86,5 @@ const pizzaOrderPrize = () => {
 document.getElementById('formSubmit').addEventListener("submit", function (e) {
     e.preventDefault();
 
-    alert('Form is submitted');
+    alert('Your order has been submitted! Select ok to see status below');
 });
