@@ -1,4 +1,6 @@
-const form = document.querySelector('form');
+// Margit's Solution
+
+/* const form = document.querySelector('form');
 const customer = document.querySelector('#name');
 const size = document.querySelectorAll('[name="size"');
 const toppings = document.querySelectorAll('input[type="checkbox"');
@@ -60,4 +62,4 @@ const takeOrder = (event) => {
     form.reset();
 };
 
-form.addEventListener('submit', takeOrder);
+form.addEventListener('submit', takeOrder); */

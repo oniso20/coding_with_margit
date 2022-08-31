@@ -3,6 +3,7 @@ const custAge = document.querySelector('#age');
 const health = document.querySelectorAll('input[name="health"]');
 const habits = document.querySelectorAll('input[name="habits"]');
 const result = document.querySelector('#result');
+// const totalScore = document.querySelector('#totalScore');
 
 
 const takeInquiry = (e) => {
@@ -12,34 +13,36 @@ const takeInquiry = (e) => {
     let customerAge = +custAge.value;
     let healthResult = [];
     let habitsResult = [];
-    let price = 500;
+    let score = 500;
 
     if (customerAge < 18) {
-        price;
+        score;
     } else if (customerAge >= 18 && customerAge <= 25) {
-        price += ((10 / 100) * price);
+        score += ((10 / 100) * score);
     } else if (customerAge >= 26 && customerAge <= 35) {
-        price += ((30 / 100) * price);
+        score += ((30 / 100) * score);
     } else if (customerAge >= 36 && customerAge <= 45) {
-        price += ((60 / 100) * price);
+        score += ((60 / 100) * score);
     } else if (customerAge >= 46 && customerAge <= 55) {
-        price * 2;
+        score * 2;
     } else if (customerAge >= 56 && customerAge <= 65) {
-        price += ((150 / 100) * price);
+        score += ((150 / 100) * score);
     } else if (customerAge >= 66) {
-        price += ((210 / 100) * price);
+        score += ((210 / 100) * score);
     }
 
     health.forEach(item => item.checked ? healthResult.push(item.value) : item);
-    price += healthResult.length * 5;
+    score += healthResult.length * 5;
     habits.forEach(habit => habit.checked ? Number(habitsResult.push(habit.value)) : habit);
     const habitsChoices = habitsResult.map(choice => Number(choice));
     const sum = habitsChoices.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
-    price += sum;
+    score += sum;
 
-    result.innerHTML = `Hello ${customerName}, your insurance will cost: ${price.toFixed(1)} €.`;
+    result.innerHTML = `Hello ${customerName}, your insurance score is: ${score}`;
+    // totalScore.innerHTML = score;
 
     form.reset();
 };
 
 form.addEventListener('submit', takeInquiry);
+// form.addEventListener('change', takeInquiry);

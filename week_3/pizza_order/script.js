@@ -14,16 +14,16 @@ const pizzaOrderPrize = () => {
 
     if (pizzaSizeFor2.checked === true) {
         pizzaPrice = 7.50;
-        pizzaSize = 'Pizza for 2';
+        pizzaSize = 'pizza for 2';
     } else if (pizzaSizeFor4.checked === true) {
         pizzaPrice = 10.50;
-        pizzaSize = 'Pizza for 4';
+        pizzaSize = 'pizza for 4';
     } else if (pizzaSizeFor6.checked === true) {
         pizzaPrice = 12.50;
-        pizzaSize = 'Pizza for 6';
+        pizzaSize = 'pizza for 6';
     } else if (pizzaSizeFor8.checked === true) {
         pizzaPrice = 15.50;
-        pizzaSize = 'Pizza for 8';
+        pizzaSize = 'pizza for 8';
     }
 
     console.log("The pizza price is: ", pizzaPrice);
@@ -69,7 +69,7 @@ const pizzaOrderPrize = () => {
 
     console.log(totalPizzaCost);
 
-    text = ` Thanks you ${custName}! ${pizzaSize}, topping(s) selected: ${selectedToppings}, delivery method is ${deliveryMethod}. Your total price is: €${totalPizzaCost}`;
+    text = ` Hello <span>${custName}</span>! you chose a <span>${pizzaSize}</span>, topping(s) selected: <span>${selectedToppings}</span>, delivery method is <span>${deliveryMethod}</span>. Total price is: <span>€${totalPizzaCost}</span>`;
 
     result.innerHTML = text;
 
@@ -77,6 +77,4 @@ const pizzaOrderPrize = () => {
 
 document.getElementById('formSubmit').addEventListener("submit", function (e) {
     e.preventDefault();
-
-    alert('Your order has been submitted! Select ok to see status below');
 });
