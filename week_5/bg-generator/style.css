@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; */
+}
+
+body {
+    background-color: green;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100vh;
+}
+
+main {
+    background-color: #fff;
+    border-radius: 0.2rem;
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); */
+    padding: 2rem 1rem;
+    height: 100vh;
+    width: 30vw;
+}
+
+section {
+    margin: 0 0 2rem 0;
+}
+
+.direction-box {
+    display: flex;
+    border: 1px dotted black;
+    flex-direction: column;
+    /* margin: 1rem; */
+}
+
+.arrows {
+    display: flex;
+    justify-content: space-between;
+    border: 1px dotted gold;
+}
+
+span {
+    background-color: darkblue;
+    color: #fff;
+    padding: 4px;
+    margin: 2px;
+}
+
+/* Radio Buttons */
+
+input[type=radio] {
+    position: absolute;
+    visibility: hidden;
+}
+
+[type=radio]+label>span {
+    cursor: pointer;
+}
+
+input[type=radio]:checked+label>span {
+    background: gray;
+    color: black;
+}
+
+/* Color types */
+
+.title-section,
+.colors-section,
+.direction-section,
+.css-code-section {
+    margin: 1;
+    text-align: center;
+}
+
+[type=color] {
+    margin-top: 0.5rem;
+    border: 0;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
