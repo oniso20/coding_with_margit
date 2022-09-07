@@ -21,7 +21,8 @@ main {
     /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); */
     padding: 2rem 1rem;
     height: 100vh;
-    width: 30vw;
+    width: 20vw;
+    min-width: fit-content;
 }
 
 section {
@@ -30,22 +31,28 @@ section {
 
 .direction-box {
     display: flex;
-    border: 1px dotted black;
+    /* border: 1px dotted black; */
     flex-direction: column;
-    /* margin: 1rem; */
+    margin: 1rem 3rem;
+}
+
+#result {
+    width: 20vw;
+    margin: 2rem 2rem;
 }
 
 .arrows {
     display: flex;
     justify-content: space-between;
-    border: 1px dotted gold;
+    /* border: 1px dotted gold; */
 }
 
 span {
-    background-color: darkblue;
+    background-color: rgb(57, 27, 2);
     color: #fff;
     padding: 4px;
     margin: 2px;
+    width: 3.5rem;
 }
 
 /* Radio Buttons */
@@ -80,4 +87,6 @@ input[type=radio]:checked+label>span {
     outline: none;
     background-color: transparent;
     cursor: pointer;
+    height: 3rem;
+    width: 5rem;
 }

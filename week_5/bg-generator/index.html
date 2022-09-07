@@ -19,8 +19,8 @@
       <section class="colors-section">
         <h3>Color</h3>
         <div class="color-selectors">
-          <input type="color" class="bg-color" />
-          <input type="color" class="bg-color-gradient" />
+          <input type="color" class="bg-color" value="#ff0000" />
+          <input type="color" class="bg-color-gradient" value="#ff0000" />
         </div>
       </section>
       <section class="direction-section">
@@ -31,33 +31,38 @@
               type="radio"
               id="bottomRight"
               name="direction"
-              value="bottom right"
+              value="to bottom right"
               checked
             />
-            <label for="left-direction">
+            <label for="bottomRight">
               <span class="material-symbols-outlined"> south_east </span>
             </label>
-            <input type="radio" id="bottom" name="direction" value="bottom" />
-            <label for="left-direction">
+            <input
+              type="radio"
+              id="bottom"
+              name="direction"
+              value="to bottom"
+            />
+            <label for="bottom">
               <span class="material-symbols-outlined"> south </span>
             </label>
             <input
               type="radio"
               id="bottomLeft"
               name="direction"
-              value="bottom left"
+              value="to bottom left"
             />
-            <label for="left-direction">
+            <label for="bottomLeft">
               <span class="material-symbols-outlined"> call_received </span>
             </label>
           </div>
           <div class="arrows middle-row-directions">
-            <input type="radio" id="right" name="direction" value="right" />
-            <label for="left-direction">
+            <input type="radio" id="right" name="direction" value="to right" />
+            <label for="right">
               <span class="material-symbols-outlined"> east </span>
             </label>
-            <input type="radio" id="left" name="direction" value="left" />
-            <label for="left-direction">
+            <input type="radio" id="left" name="direction" value="to left" />
+            <label for="left">
               <span class="material-symbols-outlined"> west </span>
             </label>
           </div>
@@ -66,22 +71,22 @@
               type="radio"
               id="topRight"
               name="direction"
-              value="top right"
+              value="to top right"
             />
-            <label for="left-direction">
+            <label for="topRight">
               <span class="material-symbols-outlined"> call_made </span>
             </label>
-            <input type="radio" id="top" name="direction" value="top" />
-            <label for="left-direction">
+            <input type="radio" id="top" name="direction" value="to top" />
+            <label for="top">
               <span class="material-symbols-outlined"> north </span>
             </label>
             <input
               type="radio"
               id="topLeft"
               name="direction"
-              value="top left"
+              value="to top left"
             />
-            <label for="left-direction">
+            <label for="topLeft">
               <span class="material-symbols-outlined"> north_west </span>
             </label>
           </div>
@@ -89,7 +94,7 @@
       </section>
       <section class="css-code-section">
         <h3>CSS code:</h3>
-        <p>Show code here:</p>
+        <p id="result">Show code here:</p>
       </section>
     </main>
     <script src="script.js"></script>

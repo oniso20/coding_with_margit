@@ -15,9 +15,6 @@ let cars = [];
 const addCar = (e) => {
     e.preventDefault();
 
-    let searchResult = searchInput.value;
-    let text;
-
     let car = {
         licenseNum: lNum.value,
         carMake: cMake.value,
@@ -49,7 +46,7 @@ const runSearch = () => {
 
     let text;
 
-    const search = cars.findIndex(particularCar => particularCar.licenseNum === searchInput.value);
+    const search = cars.findIndex(particularCar => particularCar.licenseNum.toUpperCase() === searchInput.value.toUpperCase());
 
     if (search === -1) {
         text = `There's no car with that license plate added to the system, Try again?`;
