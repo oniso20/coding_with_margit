@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Cars Database</title>
+  </head>
+  <body>
+    <section class="search-box">
+      <div class="left-section">
+        <h2>Search car by license number</h2>
+        <label for="search">License number</label>
+        <input type="text" id="search" placeholder="search" /><br />
+        <button type="button" id="startSearch" onclick="runSearch()">
+          Search
+        </button>
+        <p id="result">Result</p>
+      </div>
+      <div class="right-section"></div>
+    </section>
+    <section class="main">
+      <form class="form-display" id="form">
+        <h4>Insert car data</h4>
+
+        <table class="form-table">
+          <tr>
+            <td><label for="license">License number</label></td>
+            <td><input type="text" id="license" pattern="[A-Z][0-9]{3}" /></td>
+          </tr>
+          <tr>
+            <td><label for="carMake">Car maker</label></td>
+            <td><input type="text" , id="carMake" /></td>
+          </tr>
+          <tr>
+            <td><label for="carModel">Car model</label></td>
+            <td><input type="text" , id="carModel" /></td>
+          </tr>
+          <tr>
+            <td><label for="carOwner">Car owner</label></td>
+            <td><input type="text" , id="carOwner" /></td>
+          </tr>
+          <tr>
+            <td><label for="carPrice">Car Price</label></td>
+            <td><input type="number" min="1" step=".01" id="carPrice" /></td>
+          </tr>
+          <tr>
+            <td><label for="carColor">Car Color</label></td>
+            <td><input type="text" id="carColor" /></td>
+          </tr>
+        </table>
+        <button id="submit">Submit</button>
+        <button type="reset" id="reset">Reset</button>
+      </form>
+      <div class="table-display">
+        <h4>Cars database</h4>
+        <table id="dataTable">
+          <tr>
+            <th>LICENSE</th>
+            <th>MAKER</th>
+            <th>MODEL</th>
+            <th>OWNER</th>
+            <th>PRICE</th>
+            <th>COLOR</th>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+}
+
+/* Sections */
+.main {
+    display: flex;
+    justify-content: space-around;
+    border-top: 2rem solid lightblue;
+    border-bottom: 15rem solid lightblue;
+}
+
+.search-box {
+    display: flex;
+    border-top: 2rem solid lightblue;
+    border-bottom: 2rem solid lightblue;
+}
+
+.left-section {
+    margin-left: 12%;
+}
+
+/* Table Style */
+#dataTable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#dataTable td,
+#dataTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#dataTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#dataTable tr:hover {
+    background-color: #ddd;
+}
+
+#dataTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(100, 184, 212);
+    color: white;
+}
+
+/* Button Style */
+button {
+    background-color: #37058f;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 7rem;
+    height: 2rem;
+}
+
+/* Input */
+input,
+#search {
+    width: 10rem;
+    padding: 3px 5px;
+    margin: 8px 12px;
+    box-sizing: border-box;
+}
