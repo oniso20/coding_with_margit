@@ -36,9 +36,17 @@ section {
     margin: 1rem 3rem;
 }
 
-#result {
+.css-code-section {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
     width: 20vw;
-    margin: 2rem 2rem;
+    min-width: fit-content;
+
+}
+
+#result {
+    margin-top: 2rem;
 }
 
 .arrows {
