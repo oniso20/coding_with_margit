@@ -12,16 +12,11 @@
       <div class="left-section">
         <h2>Search car by license number</h2>
         <label for="search">License number</label>
-        <input
-          type="text"
-          id="search"
-          pattern="[A-Z]{1-3}-[0-9]{1-4}"
-          placeholder="eg... FIN-385"
-        /><br />
+        <input type="text" id="search" placeholder="eg... FIN-385" /><br />
         <button type="button" id="startSearch" onclick="runSearch()">
           Search
         </button>
-        <p id="result">Result</p>
+        <p id="result"></p>
       </div>
       <div class="right-section"></div>
     </section>
@@ -33,12 +28,7 @@
           <tr>
             <td><label for="license">License number</label></td>
             <td>
-              <input
-                type="text"
-                id="license"
-                pattern="[A-Z]{1-3}-[0-9]{1-4}"
-                placeholder="eg... FIN-385"
-              />
+              <input type="text" id="license" placeholder="eg... FIN-385" />
             </td>
           </tr>
           <tr>
@@ -63,7 +53,9 @@
           </tr>
         </table>
         <button id="submit">Submit</button>
-        <button type="reset" id="reset">Reset</button>
+        <button type="button" onclick="resetTable()" id="resetTab">
+          Reset
+        </button>
       </form>
       <div class="table-display">
         <h4>Cars database</h4>

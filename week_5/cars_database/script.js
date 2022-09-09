@@ -9,7 +9,7 @@ const cColor = document.querySelector('#carColor');
 const result = document.querySelector('#result');
 const newTable = document.querySelector('#dataTable');
 const searchInput = document.querySelector('#search');
-let cars = [];
+const cars = [];
 
 
 const addCar = (e) => {
@@ -41,6 +41,10 @@ const addCar = (e) => {
     cell5.innerHTML = car.carPrice;
     cell6.innerHTML = car.carColor;
 
+    console.table(cars);
+
+    form.reset();
+
 };
 const runSearch = () => {
 
@@ -56,6 +60,13 @@ const runSearch = () => {
 
     result.innerHTML = text;
 
+};
+
+const resetTable = () => {
+    let rowCount = newTable.rows.length;
+    for (let i = rowCount - 1; i > 0; i--) {
+        newTable.deleteRow(i);
+    }
 };
 
 form.addEventListener('submit', addCar);
