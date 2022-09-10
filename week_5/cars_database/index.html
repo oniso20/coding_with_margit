@@ -24,7 +24,8 @@
       <form class="form-display" id="form">
         <h4>Insert car data</h4>
 
-        <table class="form-table">
+        <table aria-labelledby="carInput" class="form-table">
+          <th></th>
           <tr>
             <td><label for="license">License number</label></td>
             <td>
@@ -59,7 +60,7 @@
       </form>
       <div class="table-display">
         <h4>Cars database</h4>
-        <table id="dataTable">
+        <table aria-labelledby="plateNumber" id="dataTable">
           <tr>
             <th>LICENSE</th>
             <th>MAKER</th>

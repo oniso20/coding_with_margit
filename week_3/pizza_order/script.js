@@ -26,13 +26,12 @@ const pizzaOrderPrize = () => {
         pizzaSize = 'pizza for 8';
     }
 
-    console.log("The pizza price is: ", pizzaPrice);
-
     // Pizza toppings
 
     let totalToppings = 0;
     let selectedToppings = [];
     let pizzaToppings = document.getElementsByClassName('checkboxes');
+    let choice;
 
     for (choice = 0; choice < pizzaToppings.length; choice++) {
         if (pizzaToppings[choice].checked) {
@@ -42,15 +41,11 @@ const pizzaOrderPrize = () => {
     }
     selectedToppings = selectedToppings.join(', ');
 
-    console.log("Total topping(s) selected is: ", totalToppings);
-
     if (totalToppings <= 4) {
         toppingsPrice = 0;
     } else if (totalToppings > 4) {
         toppingsPrice = ((totalToppings - 4) * 0.5);
     }
-
-    console.log("Toppings cost is: ", toppingsPrice);
 
     // Delivery Method
 
@@ -69,7 +64,7 @@ const pizzaOrderPrize = () => {
 
     console.log(totalPizzaCost);
 
-    text = ` Hello <span>${custName}</span>! you chose a <span>${pizzaSize}</span>, topping(s) selected: <span>${selectedToppings}</span>, delivery method is <span>${deliveryMethod}</span>. Total price is: <span>€${totalPizzaCost}</span>`;
+    let text = ` Hello <span>${custName}</span>! you chose a <span>${pizzaSize}</span>, topping(s) selected: <span>${selectedToppings}</span>, delivery method is <span>${deliveryMethod}</span>. Total price is: <span>€${totalPizzaCost}</span>`;
 
     result.innerHTML = text;
 

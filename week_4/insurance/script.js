@@ -3,7 +3,6 @@ const custAge = document.querySelector('#age');
 const health = document.querySelectorAll('input[name="health"]');
 const habits = document.querySelectorAll('input[name="habits"]');
 const result = document.querySelector('#result');
-// const totalScore = document.querySelector('#totalScore');
 
 
 const takeInquiry = (e) => {
@@ -24,7 +23,7 @@ const takeInquiry = (e) => {
     } else if (customerAge >= 36 && customerAge <= 45) {
         score += ((60 / 100) * score);
     } else if (customerAge >= 46 && customerAge <= 55) {
-        score * 2;
+        score *= 2;
     } else if (customerAge >= 56 && customerAge <= 65) {
         score += ((150 / 100) * score);
     } else if (customerAge >= 66) {
@@ -39,10 +38,8 @@ const takeInquiry = (e) => {
     score += sum;
 
     result.innerHTML = `Hello ${customerName}, your insurance score is: ${score}`;
-    // totalScore.innerHTML = score;
 
     form.reset();
 };
 
 form.addEventListener('submit', takeInquiry);
-// form.addEventListener('change', takeInquiry);
