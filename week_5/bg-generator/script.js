@@ -20,8 +20,9 @@ function changeColor() {
 
     const colorCode = window.getComputedStyle(body).getPropertyValue("background-image");
 
-    result.innerHTML = colorCode;
+    let text = result.innerHTML == "none" ? "" : colorCode;
 
+    result.innerHTML = text;
 }
 body.addEventListener('change', changeColor);
 color1.addEventListener('input', changeColor);
