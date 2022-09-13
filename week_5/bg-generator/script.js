@@ -18,7 +18,7 @@ function changeColor() {
 
     body.style.backgroundImage = `linear-gradient(${gradientDirection}, ${color1.value}, ${color2.value})`;
 
-    // Legacy code here:
+    // other way of displaying background color
     // const colorCode = window.getComputedStyle(body).getPropertyValue("background-image");
 
     const colorCode = document.body.style.backgroundImage + ';';
