@@ -23,9 +23,7 @@ function changeColor() {
 
     const colorCode = document.body.style.backgroundImage + ';';
 
-    let text = result.innerHTML == "none" ? "" : colorCode;
-
-    result.innerHTML = text;
+    result.innerHTML = colorCode;
 }
 body.addEventListener('change', changeColor);
 color1.addEventListener('input', changeColor);
