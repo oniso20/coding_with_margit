@@ -16,9 +16,12 @@ function changeColor() {
         }
     });
 
-    body.style.background = `linear-gradient(${gradientDirection}, ${color1.value}, ${color2.value})`;
+    body.style.backgroundImage = `linear-gradient(${gradientDirection}, ${color1.value}, ${color2.value})`;
 
-    const colorCode = window.getComputedStyle(body).getPropertyValue("background-image");
+    // Legacy code here:
+    // const colorCode = window.getComputedStyle(body).getPropertyValue("background-image");
+
+    const colorCode = document.body.style.backgroundImage + ';';
 
     let text = result.innerHTML == "none" ? "" : colorCode;
 
