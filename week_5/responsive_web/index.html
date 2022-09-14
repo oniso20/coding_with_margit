@@ -12,14 +12,22 @@
     <title>Responsive Web Page</title>
   </head>
   <body>
-    <header>
-      <div class="logo">Onis E</div>
-      <nav>
+    <header class="nav-active nav-fixed">
+      <div class="logo">
+        <p><a href="index.html">Onis E</a></p>
+      </div>
+      <nav class="responsive">
+        <button id="mob_button" >
+            <span class="material-symbols-outlined">
+                menu
+                </span>
+        </button>
         <ul>
           <li><a href="#firstSection">First</a></li>
           <li><a href="#secondSection">Second</a></li>
           <li><a href="#thirdSection">Third</a></li>
           <li><a href="#fourthSection">Fourth</a></li>
+          <li><a href="#contact">contact</a></li>
         </ul>
       </nav>
     </header>
@@ -27,21 +35,48 @@
       <section class="first-section" id="firstSection">
         <div class="mini-first">
           <p>First section</p>
-          <button id="clickMe">Click Me</button>
+          <button class="btn" id="clickMe">Click Me</button>
         </div>
-        <div class="model-example" id="modelExample">
-          <span class="material-symbols-outlined"> close </span>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum
-            sint, illum soluta, debitis perferendis quis dignissimos ut
-            assumenda, doloremque ratione cupiditate quisquam. Aspernatur alias,
-            ducimus nesciunt velit cupiditate magnam! Deleniti facilis iure
-            provident incidunt ipsam accusamus ullam adipisci sed vel officia
-            pariatur illum harum excepturi enim fuga rem quidem explicabo,
-            praesentium veritatis inventore placeat! Nulla ullam libero
-            exercitationem mollitia est, sed suscipit! Aperiam aspernatur saepe
-            voluptatum, animi sunt suscipit at?
-          </p>
+        <div class="overlay">
+          <div class="model-example" id="modelExample">
+            <h1>Model</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Voluptatum sint, illum soluta, debitis perferendis quis
+              dignissimos ut assumenda, doloremque ratione cupiditate quisquam.
+              Aspernatur alias, ducimus nesciunt velit cupiditate magnam!
+              Deleniti facilis iure provident incidunt ipsam accusamus ullam
+              adipisci sed vel officia pariatur illum harum excepturi enim fuga
+              rem quidem explicabo, praesentium veritatis inventore placeat!
+              Nulla ullam libero exercitationem mollitia est, sed suscipit!
+              Aperiam aspernatur saepe voluptatum, animi sunt suscipit at?
+            </p>
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Voluptatum sint, illum soluta, debitis perferendis quis
+              dignissimos ut assumenda, doloremque ratione cupiditate quisquam.
+              Aspernatur alias, ducimus nesciunt velit cupiditate magnam!
+              Deleniti facilis iure provident incidunt ipsam accusamus ullam
+              adipisci sed vel officia pariatur illum harum excepturi enim fuga
+              rem quidem explicabo, praesentium veritatis inventore placeat!
+              Nulla ullam libero exercitationem mollitia est, sed suscipit!
+              Aperiam aspernatur saepe voluptatum, animi sunt suscipit at?
+            </p>
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Voluptatum sint, illum soluta, debitis perferendis quis
+              dignissimos ut assumenda, doloremque ratione cupiditate quisquam.
+              Aspernatur alias, ducimus nesciunt velit cupiditate magnam!
+              Deleniti facilis iure provident incidunt ipsam accusamus ullam
+              adipisci sed vel officia pariatur illum harum excepturi enim fuga
+              rem quidem explicabo, praesentium veritatis inventore placeat!
+              Nulla ullam libero exercitationem mollitia est, sed suscipit!
+              Aperiam aspernatur saepe voluptatum, animi sunt suscipit at?
+            </p>
+            <span id="close" class="material-symbols-outlined"> close </span>
+          </div>
         </div>
       </section>
       <section class="second-section" id="secondSection">
@@ -52,7 +87,10 @@
         Fourth Section
       </section>
     </main>
-    <footer class="page-footer" id="pageFooter"></footer>
+    <footer class="page-footer" id="contact">
+      <p>Copyright &copy; 2022</p>
+    </footer id="contact" >
+    <button class="btn" id="backToTop">Back to Top</button>
     <script src="script.js"></script>
   </body>
 </html>
