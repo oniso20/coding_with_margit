@@ -42,8 +42,8 @@ body {
 }
 
 #dataTable th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     text-align: left;
     background-color: rgb(100, 184, 212);
     color: white;

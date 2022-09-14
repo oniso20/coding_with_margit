@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    font-size: 1.2rem;
+    width: 100%;
+    position: fixed;
+    border: 1px dotted black;
+    padding: 1rem;
+}
+
+.logo {
+    flex: 1;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    flex: 3;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+a:hover,
+li:hover {
+    transform: rotate(0.01turn);
+}
+
+section {
+    display: flex;
+    height: 100vh;
+}
+
+header,
+.first-section {
+    background-color: rgb(173, 121, 222);
+}
+
+.first-section {
+    flex-direction: column;
+}
+
+.mini-first {
+    margin-top: 4rem;
+}
+
+
+.second-section {
+    background-color: rgb(152, 82, 218);
+}
+
+.third-section {
+    background-color: rgb(128, 31, 218);
+}
+
+.fourth-section {
+    background-color: rgb(76, 19, 130);
+}
+
+.model-example {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 8rem;
+    padding: 1rem;
+    background-color: #ffffff;
+}
+
+.model-example span {
+    display: flex;
+    justify-content: end;
+    padding: 0 1rem 1rem;
+}
