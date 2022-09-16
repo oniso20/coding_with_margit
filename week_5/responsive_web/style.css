@@ -205,5 +205,7 @@ header,
 
     nav.responsive ul li a {
         color: #333;
+        display: block;
+        width: 100%;
     }
 }

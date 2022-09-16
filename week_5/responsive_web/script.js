@@ -2,7 +2,7 @@ const header = document.querySelector('header');
 const backButton = document.querySelector('#backToTop');
 const mobButton = document.querySelector('#mob_button');
 const nav = document.querySelector('nav');
-let links = document.querySelector('');
+let links = document.querySelector('nav ul li a');
 
 window.onscroll = function () {
     scrollFunction();
