@@ -12,6 +12,7 @@ const searchInput = document.querySelector('#search');
 const cars = [];
 
 
+
 const addCar = (e) => {
     e.preventDefault();
 
