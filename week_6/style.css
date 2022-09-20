@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Odibee Sans', sans-serif;
+    background: url(https://media0.giphy.com/media/yZVLpV6GeoYq0SsB5v/giphy.gif?cid=ecf05e47u346xz9qmanlh24vkoqc0ss5ewsumgbxt5gqfidn&rid=giphy.gif&ct=g) no-repeat center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 20px;
+}
+
+.game-area {
+    background-color: rgba(71, 118, 137, 0);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 50px 20px;
+    text-align: left;
+    max-width: 100%;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.circles {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#text-zone {
+    text-align: center;
+    color: rgba(25, 207, 40);
+    line-height: 2rem;
+}
+
+
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 8rem;
+    width: 8rem;
+    margin: 0.3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #b3b3b36a;
+}
+
+.circle.active-circle {
+    background-image: url(images/transparent-plastic.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+button {
+    background-color: #2dc313;
+    font-family: inherit;
+    color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 2rem 5rem;
+    padding: 14px 30px;
+    cursor: pointer;
+}
+
+#stop {
+    display: none;
+}
