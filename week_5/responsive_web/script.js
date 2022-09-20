@@ -58,8 +58,8 @@ const modal = () => {
     overlay.classList.toggle('visible');
 };
 
-modalButton.addEventListener('click', showModel);
-closeButton.addEventListener('click', showModel);
+modalButton.addEventListener('click', modal);
+closeButton.addEventListener('click', modal);
 
 backButton.addEventListener('click', getToTop);
 mobButton.addEventListener('click', mobMenu);
