@@ -13,7 +13,7 @@
       <section class="game-area">
         <div id="text-zone">
           <h1>Ocean Game</h1>
-          <p id="scoreBoard">Your score is: <span id="score">0</span></p>
+          <p id="scoreBoard">Your score is: <span id="result">0</span></p>
         </div>
         <div class="circles">
           <div class="circle sec1 active-circle">1</div>
@@ -25,6 +25,13 @@
         <button id="stop">Stop game</button>
       </section>
     </main>
+    <section class="overlay">
+      <div class="model">
+        <span id="close-model">close</span>
+        <p>Game over</p>
+        <p>You scored:<span id="result">0</span> and let the turtle die</p>
+      </div>
+    </section>
     <script src="script.js"></script>
   </body>
 </html>
