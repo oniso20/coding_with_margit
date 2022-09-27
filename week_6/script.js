@@ -1,14 +1,17 @@
 const start = document.querySelector('#start');
 const endGame = document.querySelector('#stop');
 const circles = document.querySelectorAll('.circle');
-const result = document.querySelector('#result');
+const result1 = document.querySelector('#result1');
+const result2 = document.querySelector('#result2');
 const overlay = document.querySelector('.overlay');
+const closeModel = document.querySelector('#close-model');
 
 let score = 0;
 let active = 0;
 let timer;
 let pace = 1000;
 let rounds = 0;
+let mySound;
 
 // Random number function
 const getRndInt = (min, max) => {
@@ -19,34 +22,34 @@ circles.forEach((circle, i) => {
     circle.addEventListener('click', () => selectCircle(i));
 });
 
-
-
-
 const selectCircle = (i) => {
-    if (i === active) {
+    if (i !== active) {
+        return stopGame();
+    } else {
         score++;
         rounds--;
-    } else {
-        stopGame();
+        console.log(score);
     }
-    result.textContent = `${score}`;
-};
-
-const addScore = () => {
+    result1.textContent = score;
+    result2.textContent = score;
 
 };
 
 const startGame = () => {
 
+    for (let i = 0; i < circles.length; i++) {
+        circles[i].style.pointerEvents = 'auto';
+    }
+
     if (rounds >= 3) {
         return stopGame();
     }
+
 
     let nextActive = pickNew(active);
 
     circles[nextActive].classList.toggle('active-circle');
     circles[active].classList.remove('active-circle');
-
 
     active = nextActive;
     console.log('current active: ', active);
@@ -57,8 +60,6 @@ const startGame = () => {
 
     rounds++;
 
-
-
     function pickNew(active) {
         let nextActive = getRndInt(0, 3);
 
@@ -68,6 +69,18 @@ const startGame = () => {
             return pickNew(active);
         }
     }
+
+
+
+    endGame.style.display = 'block';
+    start.style.display = 'none';
+
+
+
+
+
+
+
 
     // circles.forEach((circle, index) => {
     //     if (active === index) {
@@ -97,16 +110,33 @@ const startGame = () => {
 
 const stopGame = () => {
     overlay.style.visibility = 'visible';
+    start.style.visibility = 'visible';
     clearTimeout(timer);
 };
 
 const resetGame = () => {
-    window.located.reload();
+    window.location.reload();
+    return false;
 };
 
-console.log(circles);
+// Sound
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function () {
+        this.sound.play();
+    };
+    this.stop = function () {
+        this.sound.pause();
+    };
+}
 
 
 start.addEventListener('click', startGame);
 endGame.addEventListener('click', stopGame);
-result.addEventListener('click', selectCircle);
+result2.addEventListener('click', selectCircle);
+closeModel.addEventListener('click', resetGame);

@@ -19,6 +19,14 @@ body {
     padding: 20px;
 }
 
+span {
+    display: block;
+}
+
+span:hover {
+    cursor: pointer;
+}
+
 .game-area {
     background-color: rgba(71, 118, 137, 0);
     border-radius: 10px;
@@ -58,6 +66,7 @@ body {
     border-radius: 50%;
     cursor: pointer;
     background-color: #b3b3b36a;
+    pointer-events: none;
 }
 
 .circle.active-circle {
@@ -81,7 +90,11 @@ button {
 }
 
 #stop {
-    display: ;
+    display: none;
+}
+
+#start {
+    display: block;
 }
 
 /* Model */
