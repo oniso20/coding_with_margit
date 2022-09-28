@@ -13,6 +13,23 @@ let pace = 1000;
 let rounds = 0;
 let mySound;
 
+// Sound
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function () {
+        this.sound.play();
+    };
+    this.stop = function () {
+        this.sound.pause();
+    };
+}
+
+
 // Random number function
 const getRndInt = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -36,6 +53,8 @@ const selectCircle = (i) => {
 };
 
 const startGame = () => {
+    mySound = new sound("week_6/music/calm-waves.mp3");
+    mySound.play();
 
     for (let i = 0; i < circles.length; i++) {
         circles[i].style.pointerEvents = 'auto';
@@ -119,21 +138,6 @@ const resetGame = () => {
     return false;
 };
 
-// Sound
-function sound(src) {
-    this.sound = document.createElement("audio");
-    this.sound.src = src;
-    this.sound.setAttribute("preload", "auto");
-    this.sound.setAttribute("controls", "none");
-    this.sound.style.display = "none";
-    document.body.appendChild(this.sound);
-    this.play = function () {
-        this.sound.play();
-    };
-    this.stop = function () {
-        this.sound.pause();
-    };
-}
 
 
 start.addEventListener('click', startGame);
