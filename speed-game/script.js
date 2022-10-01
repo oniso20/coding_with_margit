@@ -72,7 +72,7 @@ const startGame = () => {
 
     timer = setTimeout(startGame, pace);
 
-    pace = pace - 100;
+    pace = pace - 10;
 
     rounds++;
 
