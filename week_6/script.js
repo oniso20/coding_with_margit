@@ -1,3 +1,4 @@
+const body = document.querySelector('body');
 const start = document.querySelector('#start');
 const endGame = document.querySelector('#stop');
 const circles = document.querySelectorAll('.circle');
@@ -11,24 +12,13 @@ let active = 0;
 let timer;
 let pace = 1000;
 let rounds = 0;
-let mySound;
 
-// Sound
-function sound(src) {
-    this.sound = document.createElement("audio");
-    this.sound.src = src;
-    this.sound.setAttribute("preload", "auto");
-    this.sound.setAttribute("controls", "none");
-    this.sound.style.display = "none";
-    document.body.appendChild(this.sound);
-    this.play = function () {
-        this.sound.play();
-    };
-    this.stop = function () {
-        this.sound.pause();
-    };
-}
-
+// Sound Variables
+let mySound = new Audio('music/calm-waves.wav');
+let myGetSound = new Audio('music/footsteps-in-water.wav');
+let mySuccessSound = new Audio('music/success.wav');
+let myFailSound = new Audio('music/fail.wav');
+let myGameSound = new Audio('music/game-on.wav');
 
 // Random number function
 const getRndInt = (min, max) => {
@@ -43,18 +33,25 @@ const selectCircle = (i) => {
     if (i !== active) {
         return stopGame();
     } else {
+        myGetSound.play();
         score++;
         rounds--;
         console.log(score);
     }
     result1.textContent = score;
-    result2.textContent = score;
+
+    if (score == 0) {
+        result2.innerHTML = `Your score is ${score} you didn't even try to save sea-life`;
+    } else if (score > 0 && score < 15) {
+        result2.textContent = `Your score is ${score} only?... you just let the turtle die from plastic waste 😒`;
+    } else if (score >= 15) {
+        result2.textContent = `Your score is ${score}... good job clearing the ocean plastic wastes. Sea-life can flourish because of you 😁`;
+    }
 
 };
 
 const startGame = () => {
-    mySound = new sound("week_6/music/calm-waves.mp3");
-    mySound.play();
+    myGameSound.play();
 
     for (let i = 0; i < circles.length; i++) {
         circles[i].style.pointerEvents = 'auto';
@@ -75,7 +72,7 @@ const startGame = () => {
 
     timer = setTimeout(startGame, pace);
 
-    pace = pace - 10;
+    pace = pace - 100;
 
     rounds++;
 
@@ -130,7 +127,15 @@ const startGame = () => {
 const stopGame = () => {
     overlay.style.visibility = 'visible';
     start.style.visibility = 'visible';
+    myGetSound.pause();
+    myGameSound.pause();
     clearTimeout(timer);
+
+    if (score >= 15) {
+        mySuccessSound.play();
+    } else {
+        myFailSound.play();
+    }
 };
 
 const resetGame = () => {

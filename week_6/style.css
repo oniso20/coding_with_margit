@@ -19,6 +19,7 @@ body {
     padding: 20px;
 }
 
+
 span {
     display: block;
 }
@@ -30,7 +31,8 @@ span:hover {
 .game-area {
     background-color: rgba(71, 118, 137, 0);
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); */
+    font-size: 1.5rem;
     padding: 50px 20px;
     text-align: left;
     max-width: 100%;
@@ -55,6 +57,11 @@ span:hover {
     line-height: 2rem;
 }
 
+#game-over {
+    margin: 10px;
+    font-size: 3rem;
+    color: red;
+}
 
 .circle {
     display: flex;
@@ -128,4 +135,16 @@ button {
     position: absolute;
     top: 20px;
     right: 20px;
+}
+
+.content {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: rgba(52, 211, 20, 0.5);
+    color: #f1f1f1;
+    height: 15vh;
+    width: 70%;
+    padding: 20px;
+    font-family: sans-serif;
 }
