@@ -25,10 +25,12 @@ const getRndInt = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
+//Getting the clicked div
 circles.forEach((circle, i) => {
     circle.addEventListener('click', () => selectCircle(i));
 });
 
+// Checking if the active circle has been clicked
 const selectCircle = (i) => {
     if (i !== active) {
         return stopGame();
@@ -53,10 +55,12 @@ const selectCircle = (i) => {
 const startGame = () => {
     myGameSound.play();
 
+    // Toggle pointer event to be active only when the game has started, otherwise no circle div will be active
     for (let i = 0; i < circles.length; i++) {
         circles[i].style.pointerEvents = 'auto';
     }
 
+    // stp game after 3 rounds
     if (rounds >= 3) {
         return stopGame();
     }
@@ -79,49 +83,12 @@ const startGame = () => {
     function pickNew(active) {
         let nextActive = getRndInt(0, 3);
 
-        if (nextActive != active) {
-            return nextActive;
-        } else {
-            return pickNew(active);
-        }
+        return nextActive != active ? nextActive : pickNew(active);
     }
-
-
 
     endGame.style.display = 'block';
     start.style.display = 'none';
 
-
-
-
-
-
-
-
-    // circles.forEach((circle, index) => {
-    //     if (active === index) {
-    //         circle.classList.add('active-circle');
-    //     } else {
-    //         circle.classList.remove('active-circle');
-    //     }
-    // });
-
-    // my code
-    // console.log('Start Game');
-    // const highLight = () => {
-    //     randomNumber = (Math.floor(Math.random() * 4) + 1);
-    //     circles.forEach((item, index) => {
-    //         index++;
-    //         if (index === randomNumber) {
-    //             console.log(randomNumber, 'ran');
-    //             item.classList.add('active-circle');
-    //         } else {
-    //             item.classList.remove('active-circle');
-    //         }
-
-    //     });
-    // };
-    // setInterval(highLight, 1000);
 };
 
 const stopGame = () => {
