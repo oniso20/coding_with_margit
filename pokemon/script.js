@@ -1,57 +1,81 @@
 const poke_container = document.querySelector('#poke-container');
-const gen1 = document.querySelector('#gen1');
-const gen2 = document.querySelector('#gen2');
-const gen3 = document.querySelector('#gen3');
-const gen4 = document.querySelector('#gen4');
-const gen5 = document.querySelector('#gen5');
-const gen6 = document.querySelector('#gen6');
-const gen7 = document.querySelector('#gen7');
-const gen8 = document.querySelector('#gen8');
-const tabs = document.querySelector('li');
-let active = 0;
-const gen1Count = 151;
+const pokemonCount = document.querySelector('#pokemonCount');
+const searchByName = document.querySelector('#searchByName');
 
-// Test
+console.log(searchByName.value);
 
-let count = 0;
+let searchName = [];
+
+let generationsTab = document.querySelectorAll('#tabs li'),
+    tab = [], index;
+
+// add values to the array
+for (let i = 0; i < generationsTab.length; i++) {
+    tab.push(generationsTab[i].innerHTML);
+}
+
+for (let i = 0; i < generationsTab.length; i++) {
+    generationsTab[i].onclick = function () {
+
+        index = tab.indexOf(this.innerHTML);
+
+        let generation = `limit=0&offset=0`;
+
+        if (index == 0) {
+            clearCards();
+            generation = `limit=151&offset=0`;
+            pokemonCount.innerHTML = `There are ${151} Pokemons in generation ${index + 1}`;
+        } else if (index == 1) {
+            clearCards();
+            generation = `limit=100&offset=151`;
+            pokemonCount.innerHTML = `There are ${100} Pokemons in generation ${index + 1}`;
+        } else if (index == 2) {
+            clearCards();
+            generation = `limit=135&offset=251`;
+            pokemonCount.innerHTML = `There are ${135} Pokemons in generation ${index + 1}`;
+        } else if (index == 3) {
+            clearCards();
+            generation = `limit=107&offset=387`;
+            pokemonCount.innerHTML = `There are ${107} Pokemons in generation ${index + 1}`;
+        } else if (index == 4) {
+            clearCards();
+            generation = `limit=156&offset=493`;
+            pokemonCount.innerHTML = `There are ${156} Pokemons in generation ${index + 1}`;
+        } else if (index == 5) {
+            clearCards();
+            generation = `limit=72&offset=649`;
+            pokemonCount.innerHTML = `There are ${72} Pokemons in generation ${index + 1}`;
+        } else if (index == 6) {
+            clearCards();
+            generation = `limit=88&offset=721`;
+            pokemonCount.innerHTML = `There are ${88} Pokemons in generation ${index + 1}`;
+        } else if (index == 7) {
+            clearCards();
+            generation = `limit=96&offset=809`;
+            pokemonCount.innerHTML = `There are ${96} Pokemons in generation ${index + 1}`;
+        }
+
+        getPokemon(generation);
+
+    };
+}
 
 
-const fetchGen1Pokemons = async () => {
-    for (let i = 0; i < gen1Count; i++) {
-        await getPokemon(i);
-    }
-};
+const getPokemon = async (gene) => {
 
-
-const getPokemon = async (id) => {
-
-    const urls = [
-        `https://pokeapi.co/api/v2/pokemon/${id}`,
-        `https://pokeapi.co/api/v2/pokemon?limit=150&offset=0`,
-    ];
-    Promise.all(urls.map(url =>
-        fetch(url)
-            .then(response => response.json())
-            .catch(error => console.log('There was a problem!', error))
-    ))
+    fetch(`https://pokeapi.co/api/v2/pokemon?${gene}`)
+        .then(response => response.json())
         .then(data => {
-            const globalData = data[0];
-            const countData = data[1];
-
-            console.log(globalData);
-            console.log(countData.results.length);
-            count = +countData.results.length;
-            console.log(typeof (count));
-
-            createPokemonCard(globalData);
-            // createPokemonCard(countData);
-
+            const fetches = data.results.map((item) => {
+                return fetch(item.url).then(res => res.json());
+            });
+            Promise.all(fetches).then((res) => {
+                pokeData = res;
+                res.forEach((item) => {
+                    createPokemonCard(item);
+                });
+            });
         });
-
-    // const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-    // const res = await fetch(url);
-    // const data = await res.json();
-    // console.log(data);
 
 };
 
@@ -62,7 +86,6 @@ const createPokemonCard = (pokemon) => {
 
     const name = pokemon.name.toUpperCase();
     const pokeType = pokemon.types[0].type.name;
-    console.log(pokeType);
 
     const pokemonInnerHTML = `
     <div class="img-container">
@@ -80,8 +103,30 @@ const createPokemonCard = (pokemon) => {
     poke_container.appendChild(pokemonElements);
 };
 
-const createPokemonGeneration = (generation) => {
+let count = 500;
 
+const fetchSearch = () => {
+
+    for (let i = 1; i <= count; i++) {
+        findPokemons(i);
+    }
 };
 
-gen1.addEventListener('click', fetchGen1Pokemons);
+const findPokemons = (id) => {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            let searched = searchByName.value.toLowerCase();
+
+            if (searched.includes(data.name)) {
+                clearCards();
+                createPokemonCard(data);
+            }
+
+        });
+};
+
+function clearCards() {
+    document.querySelector('#poke-container').innerHTML = "";
+    document.querySelector('#pokemonCount').innerHTML = "";
+}
