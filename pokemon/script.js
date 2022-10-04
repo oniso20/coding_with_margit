@@ -13,11 +13,11 @@ const gen1Count = 151;
 
 // Test
 
-let count;
+let count = 0;
 
 
 const fetchGen1Pokemons = async () => {
-    for (let i = 0; i < count; i++) {
+    for (let i = 0; i < gen1Count; i++) {
         await getPokemon(i);
     }
 };
@@ -26,8 +26,8 @@ const fetchGen1Pokemons = async () => {
 const getPokemon = async (id) => {
 
     const urls = [
-        `https://pokeapi.co/api/v2/pokemon?limit=150&offset=0`,
         `https://pokeapi.co/api/v2/pokemon/${id}`,
+        `https://pokeapi.co/api/v2/pokemon?limit=150&offset=0`,
     ];
     Promise.all(urls.map(url =>
         fetch(url)
@@ -35,8 +35,8 @@ const getPokemon = async (id) => {
             .catch(error => console.log('There was a problem!', error))
     ))
         .then(data => {
-            const countData = data[0];
-            const globalData = data[1];
+            const globalData = data[0];
+            const countData = data[1];
 
             console.log(globalData);
             console.log(countData.results.length);
@@ -66,7 +66,7 @@ const createPokemonCard = (pokemon) => {
 
     const pokemonInnerHTML = `
     <div class="img-container">
-        <img src=${pokemon.sprites.front_default} alt="${pokemon.sprites.other["official-artwork"].front_default}"/>
+        <img src=${pokemon.sprites.other["official-artwork"].front_default} alt="${pokemon.name}"/>
         </div>
         <div class="info">
         <span class="number">${pokemon.id}</span>
