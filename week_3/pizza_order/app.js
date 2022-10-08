@@ -1,6 +1,6 @@
 // Margit's Solution
 
-/* const form = document.querySelector('form');
+const form = document.querySelector('form');
 const customer = document.querySelector('#name');
 const size = document.querySelectorAll('[name="size"');
 const toppings = document.querySelectorAll('input[type="checkbox"');
@@ -53,13 +53,8 @@ const takeOrder = (event) => {
     }
 
     order.textContent = `Name: <span>${customerName}</span>, Size: ${sizeResult}, Topping: ${toppingResult.join(', ')} and delivery method is: ${deliveryResult}. Total price is: ${price} €.`;
-    console.log(customerName);
-    console.log(sizeResult);
-    console.log(toppingResult);
-    console.log(deliveryResult);
-    console.log(price);
 
     form.reset();
 };
 
-form.addEventListener('submit', takeOrder); */
+form.addEventListener('submit', takeOrder); 

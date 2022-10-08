@@ -30,20 +30,21 @@ const getToTop = () => {
 
 
 const mobMenu = () => {
+    for (const link of links) {
+        link.addEventListener('click', mobMenu);
 
-    if (nav.classList.contains('responsive')) {
-        nav.classList.remove('responsive');
-        document.body.style.overflow = '';
-    } else {
-        nav.classList.add('responsive');
-        document.body.style.overflow = 'hidden';
+        if (nav.classList.contains('responsive')) {
+            nav.classList.remove('responsive');
+            document.body.style.overflow = '';
+        } else {
+            nav.classList.add('responsive');
+            document.body.style.overflow = 'hidden';
+        }
     }
 
 };
 
-for (const link of links) {
-    link.addEventListener('click', mobMenu);
-}
+
 
 // const showModel = () => {
 //     let x = document.querySelector(".overlay");

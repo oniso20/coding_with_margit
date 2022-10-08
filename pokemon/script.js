@@ -6,6 +6,8 @@ console.log(searchByName.value);
 
 let searchName = [];
 
+let pokeData = [];
+
 let generationsTab = document.querySelectorAll('#tabs li'),
     tab = [], index;
 
@@ -60,7 +62,6 @@ for (let i = 0; i < generationsTab.length; i++) {
     };
 }
 
-
 const getPokemon = async (gene) => {
 
     fetch(`https://pokeapi.co/api/v2/pokemon?${gene}`)
@@ -72,11 +73,22 @@ const getPokemon = async (gene) => {
             Promise.all(fetches).then((res) => {
                 pokeData = res;
                 res.forEach((item) => {
+                    searchName.push(item.name);
                     createPokemonCard(item);
                 });
             });
         });
 
+};
+
+const findPokemon = () => {
+
+    let searched = searchByName.value.toLowerCase();
+    let results = pokeData.filter(items => (items.name.includes(searched)));
+    clearCards();
+    results.forEach(result => {
+        createPokemonCard(result);
+    });
 };
 
 
@@ -101,29 +113,6 @@ const createPokemonCard = (pokemon) => {
     pokemonElements.innerHTML = pokemonInnerHTML;
 
     poke_container.appendChild(pokemonElements);
-};
-
-let count = 500;
-
-const fetchSearch = () => {
-
-    for (let i = 1; i <= count; i++) {
-        findPokemons(i);
-    }
-};
-
-const findPokemons = (id) => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-        .then(res => res.json())
-        .then(data => {
-            let searched = searchByName.value.toLowerCase();
-
-            if (searched.includes(data.name)) {
-                clearCards();
-                createPokemonCard(data);
-            }
-
-        });
 };
 
 function clearCards() {
