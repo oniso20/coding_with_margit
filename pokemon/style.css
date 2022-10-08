@@ -146,6 +146,7 @@ img:hover {
 }
 
 input {
+    visibility: hidden;
     width: 10rem;
     height: 2rem;
     padding: 10px 20px;

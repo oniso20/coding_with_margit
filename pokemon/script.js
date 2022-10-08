@@ -79,6 +79,8 @@ const getPokemon = async (gene) => {
             });
         });
 
+    searchByName.style.visibility = 'visible';
+
 };
 
 const findPokemon = () => {
