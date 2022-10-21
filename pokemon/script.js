@@ -72,6 +72,7 @@ const getPokemon = async (gene) => {
             });
             Promise.all(fetches).then((res) => {
                 pokeData = res;
+                console.log(pokeData);
                 res.forEach((item) => {
                     searchName.push(item.name);
                     createPokemonCard(item);
@@ -99,16 +100,23 @@ const createPokemonCard = (pokemon) => {
     pokemonElements.classList.add('pokemon');
 
     const name = pokemon.name.toUpperCase();
-    const pokeType = pokemon.types[0].type.name;
 
     const pokemonInnerHTML = `
     <div class="img-container">
         <img src=${pokemon.sprites.other["official-artwork"].front_default} alt="${pokemon.name}"/>
         </div>
         <div class="info">
-        <span class="number">${pokemon.id}</span>
-        <h3 class="name">${name}</h3>
-        <small class="type">Type: <span>${pokeType}</span></small>
+            <span class="number">${pokemon.id}</span>
+            <h3 class="name">${name}</h3>
+            <div>${pokemon.types
+            .map(
+                (type) =>
+                    `<img id="poke-symbol" src="assets/icons/${type.type.name}.png"
+                        alt="${type.type.name} image"
+                    />`
+            ).join("")} 
+            </div>
+        
         </div>
     `;
 
